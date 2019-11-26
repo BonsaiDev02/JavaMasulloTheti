@@ -39,12 +39,12 @@ public class MainProgram {
 							System.out.println("Al momento ci sono: "
 							+ cat[i].getQty()
 							+ " smartphone disponibili\n\n"
-							+ "Premi 1 per aggiungere quantit‡ smartphone\n"
+							+ "Premi 1 per aggiungere quantit√† smartphone\n"
 							+ "Premi 2 per rimuovere rimuovere smartphone\n"
 							+ "Premi 3 per modificare marca del smartphone\n"
 							+ "Premi 4 per modificare sigla Processore\n"
 							+ "Premi 5 per modificare ram smartphone\n"
-							+ "Premi 6 per modificare quantit‡ memoria interna smartphone\n"
+							+ "Premi 6 per modificare quantit√† memoria interna smartphone\n"
 							+ "Premi 7 per modificare ore di autonomia\n"
 							+ "Premi 8 per modificare prezzo del dispositivo"
 							+ "Premi 9 per mostrare tutti gli smartphone inseriti: "
@@ -54,14 +54,14 @@ public class MainProgram {
 						switch(valueInt) {
 						
 							case 1: {
-								System.out.print("Inserisci quantit‡ di smartphone: ");
+								System.out.print("Inserisci quantit√† di smartphone: ");
 								valueInt = input.nextInt();
 								cat[i].addQty(valueInt);
 								break;
 							}
 							
 							case 2: {
-								System.out.print("Inserisci quantit‡ di smartphone: ");
+								System.out.print("Inserisci quantit√† di smartphone: ");
 								valueInt = input.nextInt();
 								cat[i].subQty(valueInt);
 								break;
@@ -81,14 +81,14 @@ public class MainProgram {
 							}
 							
 							case 5: {
-								System.out.print("modifica quantit‡ RAM: ");
+								System.out.print("modifica quantit√† RAM: ");
 						        valueInt = input.nextInt();
 						        tel[i].setRam(valueInt);
 						        break;
 							}
 							
 							case 6: {
-							 System.out.print("Aggiungi Quantit‡ memoria interna: ");
+							 System.out.print("Aggiungi Quantit√† memoria interna: ");
 					         valueInt = input.nextInt();
 					         tel[i].setMemory(valueInt);
 					         break;
@@ -123,10 +123,10 @@ public class MainProgram {
 	
 		private static void mostraDispositivi(int max, Telefono tel[], Catalogo cat[]) {
 			
-			System.out.println("\nPerfetto, hai inserito tutti i dispositivi!\n");
-		    System.out.println("Ecco i dispositivi che ci sono nel catalogo: ");
-		     
-		    for(int i=0; i<max; i++) {
+		System.out.println("\nPerfetto, hai inserito tutti i dispositivi!\n");
+		System.out.println("Ecco i dispositivi che ci sono nel catalogo: ");
+
+		    for(int i = 0; i < max; i++) {
 		    	System.out.println(tel[i].toString() + cat[i].toString());
 		    }
 		}
@@ -135,40 +135,40 @@ public class MainProgram {
 											 double valueDouble, String valueS, int x) {
 			
 		for(int i = 0; i < max; i++) {
-            tel[i] = new Telefono();
-            cat[i] = new Catalogo();
+		    tel[i] = new Telefono();
+		    cat[i] = new Catalogo();
 
-            System.out.print("Aggiungi Marca: ");
-            valueS = input.next();
-            tel[i].setMarca(valueS);
+		    System.out.print("Aggiungi Marca: ");
+		    valueS = input.next();
+		    tel[i].setMarca(valueS);
 
-            System.out.print("Aggiungi sigla CPU");
-            valueS = input.next();
-            tel[i].setCpu(valueS);
+		    System.out.print("Aggiungi sigla CPU");
+		    valueS = input.next();
+		    tel[i].setCpu(valueS);
 
-            System.out.print("Aggiungi quantit‡ RAM: ");
-            valueInt = input.nextInt();
-            tel[i].setRam(valueInt);
+		    System.out.print("Aggiungi quantit√† RAM: ");
+		    valueInt = input.nextInt();
+		    tel[i].setRam(valueInt);
 
-            System.out.print("Aggiungi Quantit‡ memoria interna: ");
-            valueInt = input.nextInt();
-            tel[i].setMemory(valueInt);
+		    System.out.print("Aggiungi Quantit√† memoria interna: ");
+		    valueInt = input.nextInt();
+		    tel[i].setMemory(valueInt);
 
-            System.out.print("Aggiungi ore di autonomia: ");
-            valueInt = input.nextInt();
-            tel[i].setAutonomia(valueInt);
+		    System.out.print("Aggiungi ore di autonomia: ");
+		    valueInt = input.nextInt();
+		    tel[i].setAutonomia(valueInt);
 
-            System.out.print("Aggiungi Codice del dispositivo: ");
-            valueInt = input.nextInt();
-            cat[i].setCodice(valueInt);
+		    System.out.print("Aggiungi Codice del dispositivo: ");
+		    valueInt = input.nextInt();
+		    cat[i].setCodice(valueInt);
 
-            System.out.print("Aggiungi prezzo del dispositivo: ");
-            valueDouble = input.nextDouble();
-            cat[i].setPrezzo(valueDouble);
+		    System.out.print("Aggiungi prezzo del dispositivo: ");
+		    valueDouble = input.nextDouble();
+		    cat[i].setPrezzo(valueDouble);
 
-            System.out.print("Aggiungi quantit‡: ");
-            valueInt = input.nextInt();
-            cat[i].setQty(valueInt);
-        }	
+		    System.out.print("Aggiungi quantit√†: ");
+		    valueInt = input.nextInt();
+		    cat[i].setQty(valueInt);
+		}	
 	}
 }
