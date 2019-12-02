@@ -19,7 +19,6 @@ static Telefono telefono;
 		
 			System.out.println();
 			System.out.println();
-			System.out.println();
 			System.out.println("/---------------------------------------------------------\\");
 			System.out.println("1. Aggiungi un cellulare");
 			System.out.println("2. Vendi un cellulare");
@@ -33,8 +32,7 @@ static Telefono telefono;
 			x = input.nextInt();
 			System.out.println("/---------------------------------------------------------\\");
 			System.out.println();
-			System.out.println();
-			System.out.println();
+			System.out.println("------------------OPERAZIONE--------------------------------\\");
 			
 			switch(x) {
 			
@@ -67,53 +65,62 @@ static Telefono telefono;
 				case 2: 
 					System.out.println("Inserisci il codice del prodotto da vendere: ");
 					code = input.nextInt();
-					
-					//MANCA CONTROLLO ERRORE DEL CODICE INSERITO
-					
-					catalogo.vendiTelefono(code);
+					telefono = catalogo.getTelefono(code); 
+					if (telefono != null) {
+						System.out.println("Operazione avvenuta con successo");
+						catalogo.vendiTelefono(code);
+					}
+					else System.err.println("Codice inesistente");
 					break;
 				
 				case 3: 
 					System.out.println("Inserisci il codice del prodotto da cercare: ");
 					code = input.nextInt();
-					
-					//MANCA CONTROLLO ERRORE DEL CODICE INSERITO
-					
-					telefono = catalogo.getTelefono(code);
-					System.out.println(telefono);
+					telefono = catalogo.getTelefono(code); 
+					if (telefono != null) {
+						System.out.println("Operazione avvenuta con successo");
+						System.out.println(telefono);
+					}	
+					else System.err.println("Codice inesistente");
 					break;
 					
 				case 4:
 					System.out.println("Inserisci il codice del prodotto di cui modificare la quantità: ");
-					code = input.nextInt();
-					
-					//MANCA CONTROLLO ERRORE DEL CODICE INSERITO
-					
-					System.out.println("Inserisci la quantità  nuova: ");
-					qty = input.nextInt();
-					
-					catalogo.getTelefono(code).setQty(qty);
+					code = input.nextInt();					 
+					telefono = catalogo.getTelefono(code); 
+					if (telefono != null) {
+						System.out.println("Inserisci la quantità  nuova: ");
+						qty = input.nextInt();
+						telefono.setQty(qty);
+						System.out.println("Operazione avvenuta con successo");
+					}					
+					else System.err.println("Codice inesistente");
 					break;
 					  
 				case 5:
-					System.out.println("Inserisci il codice del prodotto da rimuovere: ");
-					code = input.nextInt();
+				System.out.println("Inserisci il codice del prodotto da rimuovere: ");
+				code = input.nextInt();
 					
-					//MANCA CONTROLLO ERRORE DEL CODICE INSERITO
+				telefono = catalogo.getTelefono(code); 
 					
+				if (telefono != null) {
 					catalogo.removeTelefono(code);
-					break;   
+					System.out.println("Operazione avvenuta con successo");
+				}				
+				
+				else System.err.println("Codice inesistente");
+				break;   
 					
 				case 6:
-					System.out.println("Cellulari disponibili: " + catalogo.getAllQty());
-					break;
+				System.out.println("Cellulari disponibili: " + catalogo.getAllQty());
+				break;
 					
 				case 7:
-					catalogo.listino();
-					break;
+				catalogo.listino();
+				break;
 					
 				default:
-					System.err.println("ERRORE, hai inserito un valore innesistete");
+				System.err.println("ERRORE, hai inserito un valore innesistete");
 			}
 			
 			loop = x!=0 ? true : false;
