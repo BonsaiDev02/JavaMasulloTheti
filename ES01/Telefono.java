@@ -176,13 +176,13 @@ public class Telefono {
 	 */
 	@Override
 	public String toString() {
-		return "marca=" + marca +
-				", modello=" + modello +
-				", codice=" + codice +
-				", ram=" + ram +
-				", memoria=" + memoria + 
-				", qty=" + qty + 
-				", prezzo=" + prezzo;
+		return "\tmarca=" + marca +
+				"\tmodello=" + modello +
+				"\tcodice=" + codice +
+				"\tram=" + ram +
+				"\tmemoria=" + memoria + 
+				"\tqty=" + qty + 
+				"\tprezzo=" + prezzo;
 				
 	}
 	
