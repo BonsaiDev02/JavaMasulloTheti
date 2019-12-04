@@ -46,11 +46,13 @@ public class MainProgram {
 		agenda.addCliente(cliente);
 
 		while(loop) {
+		System.out.println("\\---------------------------------------------------------------------------------------\\");
 		System.out.println("1. Aggiungere nuovo cliente");
 		System.out.println("2. Elimina cliente");
 		System.out.println("3. Visualizza utente cliente");
 		System.out.println("4. Visualizza la lista di tutti i clienti");
 		System.out.println("0. Per uscire");
+		System.out.println("\\---------------------------------------------------------------------------------------\\");
 		x = input.nextInt();
 		switch(x) {
 		
@@ -82,19 +84,39 @@ public class MainProgram {
 			
 			break;
 		case 2:
-			//MANCA CONTROLLO ID
 			System.out.println("Inserisci id: ");
 			id = input.nextInt();
-			agenda.removeCliente(id);
+			
+			cliente = agenda.getCliente(id);
+			
+			if (cliente != null) {
+				agenda.removeCliente(id);
+				System.out.println("Il cliente è stato rimosso!");
+			}
+			
+			else {
+				System.out.println("Id errato");
+			}
+			
 			break;
 		case 3:
-			//MANCA CONTROLLO ID
 			System.out.println("Inserisci id: ");
-			System.out.println(agenda.getCliente(id = input.nextInt() ) );
+			id = input.nextInt();
+			cliente = agenda.getCliente(id);
+			if (cliente != null) {
+				System.out.println(agenda.getCliente(id));
+			}
+			else {
+				System.out.println("Il cliente non è stato trovato!");
+			}
 			break;
 			
 		case 4: 
 			agenda.listino();
+			break;
+			
+		default:
+			System.out.println("Arrivederci..!!");
 			break;
 		}
 		
